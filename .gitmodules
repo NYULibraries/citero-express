@@ -1,3 +1,0 @@
-[submodule "node_modules/citero"]
-	path = node_modules/citero
-	url = git@github.com:NYULibraries/citero-node.git
