@@ -35,7 +35,13 @@ to_format = (to) ->
 citeroMap = (data, from, to) ->
   Citero = require("citero").Citero
   console.log from_format(from).nameSync()
-  Citero.map(data).from(from_format(from)).to to_format(to)
+  mapped = Citero.map(data)
+  console.log mapped
+  mappedFrom = mapped.from(from_format(from))
+  console.log mappedFrom
+  mappedTo = mappedFrom.to(to_format(to))
+  console.log mappedTo
+  mappedTo
 
 filenameExtension = (to) ->
   switch to
