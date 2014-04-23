@@ -34,7 +34,7 @@ to_format = (to) ->
 
 citeroMap = (data, from, to) ->
   Citero = require("citero").Citero
-  console.log from_format(from).nameSync()
+  console.log from_format(from.toLowerCase()).nameSync()
   mapped = Citero.map(data)
   console.log mapped
   mappedFrom = mapped.from(from_format(from.toLowerCase()))
