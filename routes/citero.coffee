@@ -37,9 +37,9 @@ citeroMap = (data, from, to) ->
   console.log from_format(from).nameSync()
   mapped = Citero.map(data)
   console.log mapped
-  mappedFrom = mapped.from(from_format(from))
+  mappedFrom = mapped.from(from_format(from.toLowerCase()))
   console.log mappedFrom
-  mappedTo = mappedFrom.to(to_format(to))
+  mappedTo = mappedFrom.to(to_format(to.toLowerCase()))
   console.log mappedTo
   mappedTo
 
