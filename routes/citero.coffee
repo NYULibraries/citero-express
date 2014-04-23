@@ -67,6 +67,8 @@ exports.post = (req, res) ->
   exec = require("child_process").exec
   temp.track()
   temp.open "export", (err, info) ->
+    console.log "From format: #{req.body.from_format}"
+    console.log "To format: #{req.body.to_format}"
     fs.write info.fd, citeroMap(req.body.data, req.body.from_format, req.body.to_format)
     fs.close info.fd, (err) ->
       exec "grep foo '" + info.path + "' | wc -l", (err, stdout) ->
