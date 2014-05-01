@@ -41,7 +41,7 @@ fullServiceName = (to) ->
 
 exports.post = (req, res) ->
   Citero = require("citero").Citero
-  if(fullServiceName(req.body.to_service))
+  if(fullServiceName(req.body.to_service) == "endnote")
     fs = require("fs")
     crypto = require('crypto')
 
