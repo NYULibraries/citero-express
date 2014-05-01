@@ -1,45 +1,11 @@
-from_format = (from) ->
-  Formats = require("citero").Formats
-  switch from
-    when "ris"
-      Formats.RIS
-    when "openurl"
-      Formats.OPENURL
-    when "pnx"
-      Formats.PNX
-    when "xerxes_xml"
-      Formats.XERXES_XML
-    when "csf"
-      Formats.CSF
-    when "refworks_tagged"
-      Formats.REFWORKS_TAGGED
-
-to_format = (to) ->
-  Formats = require("citero").Formats
-  switch to
-    when "ris"
-      Formats.RIS
-    when "openurl"
-      Formats.OPENURL
-    when "pnx"
-      Formats.PNX
-    when "easybib"
-      Formats.EASYBIB
-    when "csf"
-      Formats.CSF
-    when "csl"
-      Formats.CSL
-    when "bibtex"
-      Formats.BIBTEX
-
 citeroMap = (data, from, to) ->
   Citero = require("citero").Citero
-  console.log from_format(from.toLowerCase()).nameSync()
+  console.log from
   mapped = Citero.map(data)
   console.log mapped
-  mappedFrom = mapped.from(from_format(from.toLowerCase()))
+  mappedFrom = mapped.from(from)
   console.log mappedFrom
-  mappedTo = mappedFrom.to(to_format(to.toLowerCase()))
+  mappedTo = mappedFrom.to(to)
   console.log mappedTo
   mappedTo
 

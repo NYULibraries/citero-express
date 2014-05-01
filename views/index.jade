@@ -9,5 +9,11 @@ block content
    h1 API
    ul
     li
-      h2 /citero
+      h2 /download
       p post :data, :from_format, :to_format
+    li
+      h2 /push_to
+      p post :data, :from_format, :to_service
+    li
+      h2 /from/:from/to/:to?
+      p post :data, :from_format, :to_service

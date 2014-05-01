@@ -1,0 +1,10 @@
+extends layout
+
+
+block content
+  h1= title
+  p Export to #{service}
+  form(id="#{id}", method="POST", action="#{action}")
+    textarea(name="#{elementName}")= data
+    br
+    input(type='submit', name="Submit", value="Export to #{service}")

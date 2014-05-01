@@ -4,7 +4,9 @@ Module dependencies.
 ###
 express = require("express")
 routes = require("./routes")
-citero = require("./routes/citero")
+download = require("./routes/download")
+pushTo = require("./routes/pushTo")
+openurl = require("./routes/openurl")
 http = require("http")
 path = require("path")
 app = express()
@@ -24,8 +26,12 @@ app.use express.static(path.join(__dirname, "public"))
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
 app.get "/", routes.index
-app.get "/citero/:data/:from_format/:to_format", citero.post
-app.post "/citero", citero.post
+app.get "/download/:data/:from_format/:to_format", download.post
+app.post "/export", download.post
+app.post "/push_to", pushTo.post
+app.get "/export/to/:to_format/" openurl.get
+
+app.get "/push_to", pushTo.post
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
   return
