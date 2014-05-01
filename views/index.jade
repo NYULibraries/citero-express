@@ -9,11 +9,39 @@ block content
    h1 API
    ul
     li
-      h2 /download
-      p post :data, :from_format, :to_format
+      h2 /export
+      h3 POST
+      p
+      ul
+        li
+          b  :data
+          |  - the data to be processed,
+        li
+          b  :from_format
+          |  - the format you're exporting from,
+        li
+          b  :to_format
+          |  -the format you're exporting to
     li
-      h2 /push_to
-      p post :data, :from_format, :to_service
+      h2 /export_service
+      h3 POST
+      p
+      ul
+        li
+          b  :data
+          |  - the data to be processed,
+        li
+          b  :from_format
+          |  - the format you're exporting from,
+        li
+          b  :to_service
+          |  -the service you're exporting to
     li
-      h2 /from/:from/to/:to?
-      p post :data, :from_format, :to_service
+      h2 /export/to/:to?query=val
+      h3 GET
+      p
+        ul
+          li
+            b  :to
+            |  -the service you're exporting to
+      | With an OpenURL query string
