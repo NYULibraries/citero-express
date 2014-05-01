@@ -45,7 +45,7 @@ exports.post = (req, res) ->
 
       return
 
-    res.set "Content-Disposition": "attachment; filename='export." + (filenameExtension(req.body.to)) + "'"
+    res.set "Content-Disposition": "attachment; filename='export.#{(filenameExtension(req.body.to))}'"
     res.download info.path
     return
 
