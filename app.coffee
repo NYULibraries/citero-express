@@ -29,7 +29,7 @@ app.get "/", routes.index
 app.get "/download/:data/:from_format/:to_format", download.post
 app.post "/export", download.post
 app.post "/push_to", pushTo.post
-app.get "/export/to/:to_format/" openurl.get
+# app.get "/export/to/:to_format/" openurl.get
 
 app.get "/push_to", pushTo.post
 http.createServer(app).listen app.get("port"), ->
