@@ -45,6 +45,6 @@ exports.post = (req, res) ->
     data: Citero.map(req.body.data).from(req.body.from_format).to(serviceFormat(req.body.to_service)),
     service: fullServiceName(req.body.to_service),
     action: serviceAction(req.body.to_service,req.body.data),
-    elementName: serviceElementName("easybib"),
-    id: serviceElementName("easybib")
+    elementName: serviceElementName(req.body.to_service),
+    id: serviceElementName(req.body.to_service)
   return
