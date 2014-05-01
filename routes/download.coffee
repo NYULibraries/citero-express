@@ -30,8 +30,8 @@ exports.post = (req, res) ->
   util = require("util")
   exec = require("child_process").exec
   temp.track()
-  temp.open {prefix: "export", suffix: ".#{(filenameExtension(req.body.to_format))}"}, (err, info) ->
-    fs.write info.fd, citeroMap(req.body.data, req.body.from_format, req.body.to_format)
+  temp.open {prefix: "export", suffix: ".#{(filenameExtension(to_format))}"}, (err, info) ->
+    fs.write info.fd, citeroMap(data, "openurl", to_format)
     fs.close info.fd, (err) ->
       exec "grep foo '" + info.path + "' | wc -l", (err, stdout) ->
         util.puts stdout.trim()

@@ -30,7 +30,7 @@ app.get "/download/:data/:from_format/:to_format", download.post
 app.post "/export", download.post
 app.post "/export_service", pushTo.post
 app.get "/file/:filename", pushTo.file
-# app.get "/export/to/:to_format/" openurl.get
+app.get "/export/to/:to_format", openurl.get
 
 app.get "/export_service", pushTo.post
 http.createServer(app).listen app.get("port"), ->
