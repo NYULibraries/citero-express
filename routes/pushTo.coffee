@@ -42,9 +42,9 @@ fullServiceName = (to) ->
 exports.post = (req, res) ->
   Citero = require("citero").Citero
   res.render "pushTo",
-    data: Citero.map(req.body.data).from(req.body.from_format).to(serviceFormat(req.body.service_format)),
-    service: fullServiceName(req.body.service_format),
-    action: serviceAction(req.body.service_format,req.body.data),
+    data: Citero.map(req.body.data).from(req.body.from_format).to(serviceFormat(req.body.to_service)),
+    service: fullServiceName(req.body.to_service),
+    action: serviceAction(req.body.to_service,req.body.data),
     elementName: serviceElementName("easybib"),
     id: serviceElementName("easybib")
   return
