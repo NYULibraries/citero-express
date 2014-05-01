@@ -10,7 +10,7 @@ citeroMap = (data, from, to) ->
   mappedTo
 
 filenameExtension = (to) ->
-  switch to
+  switch to.toLowerCase()
     when "ris"
       "ris"
     when "openurl"
