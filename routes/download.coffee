@@ -25,6 +25,8 @@ filenameExtension = (to) ->
       "csl"
     when "bibtex"
       "bib"
+    else
+      "ris"
 
 exports.post = (req, res) ->
   temp = require("temp")
