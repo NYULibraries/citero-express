@@ -34,7 +34,7 @@ exports.post = (req, res) ->
   util = require("util")
   exec = require("child_process").exec
   temp.track()
-  temp.open {prefix: "export", suffix: (filenameExtension(req.body.to))}, (err, info) ->
+  temp.open {prefix: "export", suffix: ".#{(filenameExtension(req.body.to))}"}, (err, info) ->
     console.log "From format: #{req.body.from_format}"
     console.log "To format: #{req.body.to_format}"
     fs.write info.fd, citeroMap(req.body.data, req.body.from_format, req.body.to_format)
