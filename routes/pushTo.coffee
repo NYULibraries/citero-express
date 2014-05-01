@@ -51,7 +51,7 @@ exports.post = (req, res) ->
       if(err)
         return;
       else
-        res.redirect(301, "http://www.myendnoteweb.com/?func=directExport&partnerName=Primo&dataIdentifier=1&dataRequestUrl=http://export-citations.herokuapp.com/file/#{filename}")
+        res.redirect(301, "http://www.myendnoteweb.com/?func=directExport&partnerName=Primo&dataIdentifier=1&dataRequestUrl=#{req.protocol}://#{req.get('host')}/file/#{filename}")
   else
     res.render "pushTo",
       data: serviceDataDecoration(req.body.to_service,Citero.map(req.body.data).from(req.body.from_format).to(serviceFormat(req.body.to_service))),
